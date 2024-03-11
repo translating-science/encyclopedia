@@ -1,0 +1,601 @@
+/* You can add global styles to this file, and also import other style files */
+
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  src: url('./assets/Atkinson-Hyperlegible/Atkinson-Hyperlegible-Bold-102.ttf');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  src: url('./assets/Atkinson-Hyperlegible/Atkinson-Hyperlegible-BoldItalic-102.ttf');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  src: url('./assets/Atkinson-Hyperlegible/Atkinson-Hyperlegible-Regular-102.ttf');
+}
+
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  src: url('./assets/Atkinson-Hyperlegible/Atkinson-Hyperlegible-Italic-102.ttf');
+  font-style: italic;
+}
+
+body *
+{
+   font-family: "Atkinson Hyperlegible" !important;
+}
+
+#footer-fade {
+    background: linear-gradient(#374987, #6C8DFF);
+    height: 300px;
+    position: relative;
+}
+
+.footer-icons {
+    height: 1.5rem;
+}
+
+.light-image {
+    border-color: #EEEEEE;
+    border-style: solid;
+    border-width: 0.5rem;
+    border-radius: 1.5rem;
+    width: 450px;
+    margin: auto;
+    display: block;
+}
+
+.light-font-color {
+    color: #FFFFFF;
+}
+
+body, .dark-font-color {
+    color: #374987;
+}
+
+a {
+    color: #2D4EC0;
+}
+
+.intermediate-font-color {
+    color: #6C8DFF;
+}
+
+.light-link {
+    color: #FFFFFF;
+}
+
+.light-link:visited {
+    color: #DDDDDD;
+}
+
+.bright-top-border {
+    border-top-style: solid;
+    border-color: #FFF9B1;
+    border-top-width: 0.5rem;
+}
+
+.bright-background-color {
+    background-color: #FFF9B1;
+}
+
+.light-background-color {
+    background-color: #F8F8F8;
+}
+
+.white-background-color {
+    background-color: #FFFFFF;
+}
+
+.dark-background-color {
+    background-color: #374987;
+}
+
+.dark-side-borders {
+    border-style: none solid;
+    border-width: 2px;
+    border-color: #374987;
+}
+
+.white-background-color {
+    background-color: #FFFFFF;
+}
+
+body, .intermediate-background-color {
+    background-color: #6C8DFF;
+}
+
+body {
+    margin: 0;
+}
+
+#container {
+    background-color: #FFFFFF;
+    width: 100%;
+    height: fit-content;
+}
+
+nav {
+    padding-bottom: 40px;
+}
+
+ul {
+    margin-top: 3px;
+    padding-left: 28px;
+}
+
+.full-width {
+    width: 100%;
+    height: fit-content;
+}
+
+.left {
+    float: left;
+}
+
+.narrow-content, .content {
+    padding-top: 0.25rem;
+    padding-bottom: 1rem;
+}
+
+@media (1000px <= width) {
+    .narrow-content {
+	margin-left: auto;
+	margin-right: auto;
+	width: 900px;
+    }
+}
+
+@media (1333px <= width) {
+    .content {
+	margin-left: auto;
+	margin-right: auto;
+	width: 1200px;
+    }
+}
+
+@media (600px <= width < 1000px) {
+    .narrow-content {
+	padding-left: 5%;
+	padding-right: 5%;
+	width: 90%;
+    }
+}
+
+@media (width < 1333px) {
+    .content {
+	padding-left: 5%;
+	padding-right: 5%;
+	width: 90%;
+    }
+}
+
+@media (width < 1000px) {
+    .narrow-content {
+	padding-left: 5%;
+	padding-right: 5%;
+	width: 90%;
+    }
+}
+
+#epm-overview {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+#epm-overview p {
+    text-align: center;
+}
+
+@media (width > 600px) {
+    #epm-overview p {
+	width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+    }
+}
+
+@media (width <= 600px) {
+    #epm-overview p {
+	max-width: 500px;
+    }
+}
+
+#epm-sections {
+    padding: 0;
+    margin-bottom: 1.5rem;
+}
+
+#epm-sections h2 {
+    margin-top: 0;
+    padding: 0.5rem;
+}
+
+#epm-sections div {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+    column-gap: 2rem;
+}
+
+#epm-sections ol {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+#epm-sections li {
+    width: 10rem;
+    height: fit-content;
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+#logo {
+    display: flex;
+}
+
+#logo-initials {
+    margin-left: 0.75rem;
+    margin-right: 0.75rem;
+
+    font-weight: bold;
+    font-size: 3rem;
+}
+
+@media (width > 900px) {
+    #logo-small, #logo-small h1 {
+	font-weight: normal;
+	font-size: 3rem;
+    }
+
+    #logo-br {
+	display: none;
+    }
+}
+
+@media (width <= 900px) {
+    #logo-small, #logo-small h1 {
+	padding-top: 0.2rem;
+	font-weight: normal;
+	font-size: 1.25rem;
+    }
+}
+
+.footer-text {
+    margin-bottom: 0.75rem;
+    margin-left: 0.75rem;
+    margin-right: auto;
+}
+
+/* make header link white on screen but not when printing */
+@media screen {
+    .header-footer-link {
+	color: #FFFFFF;
+    }
+}
+@media print {
+    .header-footer-link {
+	color: #374987;
+    }
+}
+
+.header-footer-link {
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+h1 + h2 {
+    margin: 0.25rem 0;
+}
+
+h2 + p {
+    margin-top: 0.25rem;
+}
+
+h2 {
+    font-size: 1.75rem;
+}
+
+h2.big {
+    font-size: 3rem;
+}
+
+h3.big {
+    font-size: 2rem;
+}
+
+@media (width >= 600px) {
+    .two-col {
+	display: grid;
+	grid-template-columns: 50% 50%;
+    }
+}
+
+@media (width >= 800px) {
+    .uneven-two-col {
+	display: grid;
+	gap: 5%;
+	grid-template-columns: 55% 40%;
+    }
+}
+
+@media (width < 600px) {
+    .two-col {
+	display: grid;
+	grid-template-columns: 100%;
+    }
+}
+
+@media (width < 800px) {
+    .uneven-two-col {
+	display: grid;
+	grid-template-columns: 100%;
+    }
+}
+
+.three-col {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+    column-gap: 5rem;
+}
+
+.main-col {
+    row-gap: 1.5rem;
+}
+
+.col {
+    margin: auto 0;
+    padding: 0 5%;
+}
+
+.col-no-valign {
+    margin: 0 0;
+    padding: 0 0;
+}
+
+.col-no-valign p:first-of-type {
+    margin-top: 0;
+}
+
+@media(width > 1000px) {
+    .cell {
+	width: 22rem;
+	height: fit-content;
+	margin: 1rem 0;
+	padding: 0.5rem;
+    }
+}
+
+@media(width <= 1000px) {
+    .cell {
+	width: 88%;
+	height: fit-content;
+    }
+
+    .cell h2, .cell h3, .cell h4, .cell p {
+	margin-left: 1rem;
+	margin-right: 1rem;
+    }
+}
+
+.li-icon {
+    height: 1.5rem;
+}
+
+.headshot {
+    border-radius: 1rem;
+    height: 15rem;
+    width: 15rem;
+}
+
+.bio {
+    width: fit-content;
+}
+
+.bio h3 {
+    text-align: left;
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+
+}
+
+#story {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding-top: 0;
+}
+
+#story h2 {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 0.5rem;
+}
+
+#story div {
+    padding-top: 0.5rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+#platform h2 {
+    margin-bottom: 0;
+}
+
+#platform p {
+    margin-top: 0.25rem;
+}
+
+.bio p {
+    margin-top: 0.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.bio-text {
+    max-width: 700px;
+    width: fit-content;
+}
+
+.cell h3 {
+    margin-bottom: 0;
+}
+
+.cell h4 {
+    margin-top: 0;
+}
+
+.cell h2 {
+    margin-bottom: 0;
+}
+
+.cell h2 + h3 {
+    margin-top: 0;
+}
+
+.center-align {
+    margin: auto;
+}
+
+/* define key "top-of-page" (header, nav) styles */
+
+#header {
+    padding-top: 0;
+    padding-bottom: 0.5rem;
+    border-bottom-style: solid;
+    border-color: #FFF9B1;
+    border-bottom-width: 0.5rem;
+}
+
+nav {
+    padding-bottom: 0.5rem;
+    height: fit-content;
+}
+
+nav.breadcrumb ol {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.crumb {
+  display: inline;
+}
+
+nav.breadcrumb li + li::before {
+  display: inline-block;
+  margin: 0 0.25em;
+  content: "\2192";
+}
+
+ul.children li + li::before {
+    content: none;
+}
+
+nav.breadcrumb [aria-current="page"] {
+  font-weight: bold;
+}
+
+/* skip link and nav shouldn't show when printed */
+@media print {
+    nav.breadcrumb {
+	display: none;
+    }
+    
+    #skip-link {
+	display: none;
+    }
+}
+
+#skip-link {
+    padding-left: 0.75rem;
+    height: 1rem;
+    font-size: 0.5rem;
+    color: #374987;
+}
+
+#skip-link:focus, #skip-link:active {
+    color: #ffffff;
+}
+
+.small-caps {
+    font-variant: small-caps;
+}
+
+h1.terms-header {
+    margin: 0;
+    padding-top: 1rem;
+}
+
+h2.terms-header,h3.terms-header {
+    margin-bottom: 0.25rem;
+}
+
+h2.terms-header + p {
+    margin-top: 0;
+}
+
+h3.terms-header + p {
+    margin-top: 0;
+}
+
+#patient-impact, #our-story {
+    padding: 1rem 0;
+}
+
+.center {
+    margin: auto;
+    margin-top: 0;
+    text-align: center;
+}
+
+p.center {
+    padding-bottom: 1rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+li p {
+    margin-top: 0.25rem;
+    margin-bottom: 0;
+}
+
+footer p {
+    margin-bottom: 0.25rem;
+}
+
+ol ol {
+    list-style-type: lower-alpha;
+}
+
+.footer-brand {
+    font-size: 1.5rem;
+}
+
+#license .narrow-content {
+    padding-bottom: 0.25rem;
+}
+
+#license p {
+    margin-bottom: 0;
+}
+
+#license img {
+    height: 1.25rem !important;
+    margin-left: 0.25rem;
+    vertical-align: text-bottom;
+    color: ##374987; 
+}

@@ -1,0 +1,37 @@
+{
+    "symbol": "NF1",
+    "full_name": "Neurofibromin 1",
+    "detailed": [
+	"NF1 is a tumor suppressor gene that controls the rate of growth of cells by moderating the activity of the RAS/MAPK pathway. Germline mutations in the NF1 gene cause the Neurofibromatosis type 1 syndrome, a syndrome that leads to the development of both benign and cancerous nerve tumors.",
+	"The NF1 gene is commonly mutated in a variety of cancers. Approximately 5-10% of prostate cancers have an NF1 mutation. While there are no approved medicines for treating NF1 mutated cancers, there are several clinical trials that are focused on precision therapies for NF1 mutated cancers."
+    ],
+    "location": "chromosome 17",
+    "alternative_names": [
+	"Neurofibromatosis type 1 protein",
+	"Neurofibromatosis-related protein"
+    ],
+    "pathways": [
+	{
+	    "pathway": "RAS/MAPK",
+	    "references": [
+		"pmc10119308",
+		"pmid2121370"
+	    ]
+	}, {
+	    "pathway": "Raf/MEK/ERK",
+	    "references": ["pmc10119308"]
+	}, {
+	    "pathway": "PI3K/AKT/mTOR",
+	    "references": ["pmc10119308"]
+	}, {
+	    "pathway": "Rho/ROCK/LIMK2/cofilin",
+	    "references": ["pmc10119308"]
+	}, {
+	    "pathway": "PKA-Ena/VASP",
+	    "references": ["pmc10119308"]
+	}, {
+	    "pathway": "cAMP/PKA",
+	    "references": ["pmc10119308"]
+	}
+    ]
+}
