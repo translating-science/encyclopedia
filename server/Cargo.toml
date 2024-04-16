@@ -13,4 +13,5 @@ futures = "*"
 maud = { version = "*", features = ["actix-web"] }
 serde = { version = "*", features = ["derive"] }
 serde_json = "*"
+titlecase = "3.0.0"
 tower-http = { version = "*", features = ["fs"] }

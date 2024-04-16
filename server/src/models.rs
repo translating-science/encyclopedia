@@ -31,3 +31,35 @@ pub struct Gene {
     pub alternative_names: Vec<String>,
     pub pathways: Vec<Pathway>,
 }
+
+#[derive(Serialize, Deserialize)]
+pub struct Approval {
+    pub reference: String,
+    pub trial_name: String,
+    pub trial_nct_id: String,
+    pub condition: String,
+    pub biomarker: Option<String>,
+    pub description: String,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct Evidence {
+    pub trial_name: Option<String>,
+    pub trial_nct_id: Option<String>,
+    pub assessed: String,
+    pub rationale: String,
+    pub result: String,
+    pub references: Vec<String>,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct Therapy {
+    pub name: String,
+    pub marketing_names: Vec<String>,
+    pub rxcui: String,
+    pub detailed: Vec<String>,
+    pub approvals_summary: Vec<String>,
+    pub approvals: Vec<Approval>,
+    pub evidence_summary: Vec<String>,
+    pub evidence: Vec<Evidence>,
+}

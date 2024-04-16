@@ -23,3 +23,5 @@ pub mod models;
 pub mod reference;
 
 pub mod template;
+
+pub mod therapies;

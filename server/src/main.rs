@@ -20,6 +20,7 @@ use actix_web::{web, App, HttpServer};
 use ts_encyclopedia::genes::gene::gene_page;
 use ts_encyclopedia::genes::genes::genes;
 use ts_encyclopedia::landing::landing_page;
+use ts_encyclopedia::therapies::therapy::therapy_page;
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
@@ -30,6 +31,7 @@ async fn main() -> std::io::Result<()> {
             .service(landing_page)
             .service(gene_page)
             .service(genes)
+            .service(therapy_page)
     })
     .bind(("127.0.0.1", 8081))?
     .run()

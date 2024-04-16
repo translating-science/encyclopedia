@@ -1,0 +1,62 @@
+{
+    "name": "Pembrolizumab",
+    "marketing_names": [
+	"Keytruda"
+    ],
+    "rxcui": "1547545",
+    "detailed": [
+	"Pembrolizumab is an immunotherapy medication developed by Merck Sharp & Dohme that is approved for the treatment of many advanced cancers. Pembrolizumab is known as an \"immune checkpoint inhibitor\": immune checkpoints are a normal part of the human immune system that prevent the immune system from attacking healthy cells. In some cancers, tumor cells start creating large amounts of immune checkpoint proteins, which stops the immune system from attacking the cancer cells. Pembrolizumab works by helping T cells from the human immune system to attack tumor cells that over-produce the PD-L1 and PD-L2 immune checkpoint proteins."
+    ],
+    "approvals_summary": [
+	"Pembrolizumab has been approved by the FDA for the treatment of numerous cancers. While Pembrolizumab does not have an approval that is specific to prostate cancer, it has two biomarker-based approvals for the treatment of all metastatic/unresectable solid tumors."
+    ],
+    "approvals": [
+	{
+	    "reference": "https://www.fda.gov/drugs/drug-approvals-and-databases/fda-approves-pembrolizumab-adults-and-children-tmb-h-solid-tumors",
+	    "trial_name": "KEYNOTE-158",
+	    "trial_nct_id": "NCT02628067",
+	    "condition": "Unresectable or metastatic solid tumors",
+	    "biomarker": "high tumor mutational burden (TMB-H)",
+	    "description": "In this trial, patients with an unresectable/metastatic solid cancer and a high tumor mutational burden (TMB ≥10 mut/Mb) had an overall response rate of 29%. 57% of patients who responded to Pembrolizumab had responses lasting more than a year."
+	},
+	{
+	    "reference": "https://www.fda.gov/drugs/resources-information-approved-drugs/fda-grants-accelerated-approval-pembrolizumab-first-tissuesite-agnostic-indication",
+	    "trial_name": "",
+	    "trial_nct_id": "",
+	    "condition": "Unresectable or metastatic solid tumors",
+	    "biomarker": "high microsatellite instability (MSI-H) or mismatch repair deficiency (dMMR)",
+	    "description": "In this collection of trials, patients with an unresectable/metastatic solid cancer and high microsatellite instability or mismatch repair deficiency had an overall response rate of 39.6%. 78% of patients who responded to Pembrolizumab had responses lasting more than half a year."
+	}
+    ],
+    "evidence_summary": [
+	"The evidence supporting the use of pembrolizumab for the treatment of advanced prostate cancer is inconclusive.",
+	"While the pan-solid tumor TMB-H and MSI-H/dMMR approvals allow for pembrolizumab to be used in treating prostate cancers, the trials that supported these approvals included few patients with prostate cancer (e.g., only 6 prostate cancer patients were included in the KEYNOTE-158 study, and only 2 prostate cancer patients were included in the study that led to the MSI-H pembrolizumab approval). Additionally, MSI-H/dMMR or TMB-H are only present in 5-10% of metastatic castrate resistant prostate cancer patients.",
+	"To better understand whether pembrolizumab is effective at treating patients with metastatic prostate cancer, we can look at further trials that focused on pembrolizumab in specific cohorts of prostate cancer patients, as well as real world evidence that assesses the effectiveness of pembrolizumab in larger cohorts of prostate cancer patients with TMB-H or MSI-H/dMMR."
+    ],
+    "evidence": [
+	{
+	    "trial_name": "KEYNOTE-641",
+	    "trial_nct_id": "NCT03834493",
+	    "assessed": "Is the combination of Pembrolizumab plus enzalutamide effective in mCRPC patients who have not had chemotherapy?",
+	    "rationale": "This was studied because the combination of Pembrolizumab plus enzalutamide showed anti-tumor activity in earlier stage studies.",
+	    "result": "In this phase 3 study of 1,244 mCRPC patients, the combination of Pembrolizumab and enzalutamide did not improve survival, leading to the study being stopped early.",
+	    "references": ["PMID34044584", "https://doi.org/10.1016/j.annonc.2023.09.2721"]
+	},
+	{
+	    "trial_name": "KEYNOTE-921",
+	    "trial_nct_id": "NCT03834506",
+	    "assessed": "Does the combination of Pembrolizumab plus docetaxel improve survival over docetaxel alone in mCRPC patients?",
+	    "rationale": "Case studies have anecdotally shown that some mCRPC patients benefit from treatment with immunotherapies.",
+	    "result": "In this phase 3 study of 1,030 mCRPC patients, the combination of Pembrolizumab and docetaxel improved progression-free survival by less than a month, which was not a statistically significant result.",
+	    "references": ["PMID34098744", "https://doi.org/10.1200/JCO.2023.41.6_suppl.19"]
+	},
+	{
+	    "trial_name": "KEYNOTE-991",
+	    "trial_nct_id": "NCT04191096",
+	    "assessed": "Does the combination of Pembrolizumab plus enzalutamide / ADT improve survival and progression to castrate resistance over enzalutamide / ADT alone in mHSPC patients?",
+	    "rationale": "Enzalutamide can lead to increased production of PD-L1/L2 by tumors. Since pembrolizumab targets PD-L1/L2, pembrolizumab and enzalutamide may have synergistic effects.",
+	    "result": "This phase 3 study of 1,251 mHSPC patients was stopped (for futility) once it became clear that adding pembrolizumab to enzalutamide / ADT did not improve survival.",
+	    "references": ["PMID36705526", "https://doi.org/10.1016/j.annonc.2023.09.2722"]
+	}
+    ]
+}
