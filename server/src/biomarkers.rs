@@ -17,26 +17,22 @@
 use actix_web::error::ErrorNotFound;
 use actix_web::{get, web, Result};
 use maud::{html, Markup};
-use serde_json::de::from_reader;
 use titlecase::titlecase;
 
-use std::error::Error;
-use std::fs::File;
-
-use crate::models::Article;
+use crate::article::{markup_article, read_article_markup};
 use crate::template::{render_page, NamedUrl, Navigation};
 
 #[rustfmt::skip::macros(html)]
 #[get("/biomarkers/{biomarker_class}/index.html")]
 pub async fn biomarker_page(path: web::Path<String>) -> Result<Markup> {
     let biomarker_class = path.into_inner();
-    let biomarker_article = read_article(&biomarker_class);
+    let biomarker_article = read_article_markup(&String::from("biomarkers"), &biomarker_class);
 
     if let Ok(biomarker_article) = biomarker_article {
         Ok(render_page(
-            &biomarker_article.name.clone(),
+            &biomarker_article.article.name.clone(),
             &Navigation {
-                page_title: titlecase(&biomarker_article.name.clone()),
+                page_title: titlecase(&biomarker_article.article.name.clone()),
                 parents: vec![
                     NamedUrl {
                         name: String::from("Encyclopedia of Precision Medicine"),
@@ -59,38 +55,5 @@ pub async fn biomarker_page(path: web::Path<String>) -> Result<Markup> {
             "Could not find page for biomarker {}",
             biomarker_class
         )))
-    }
-}
-
-fn read_article(biomarker_class: &String) -> Result<Article, Box<dyn Error>> {
-    let file = File::open(format!(
-        "../articles/biomarkers/{}/article.json",
-        biomarker_class
-    ))?;
-
-    let article = from_reader(file)?;
-    Ok(article)
-}
-
-#[rustfmt::skip::macros(html)]
-fn markup_article(article: Article) -> Markup {
-    html! {
-	div .narrow-content {
-	    h1 {
-		(article.name)
-	    }
-	    @if let Some(stub_issue) = article.stub_issue {
-		p {
-		    "This article is currently a stub. That means that it exists and can be linked to, but it doesn't have any descriptive text yet!"
-		}
-		p {
-		    "Would you be interested in contributing to this article? If yes, please check our "
-			a href=(format!("https://github.com/translating-science/encyclopedia/issues/{}", stub_issue)) {
-			    "issue tracker"
-			}
-		    " to learn more about how to contribute!"    
-		}
-	    }
-	}
     }
 }

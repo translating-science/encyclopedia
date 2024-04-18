@@ -14,6 +14,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+use maud::Markup;
 use serde::{Deserialize, Serialize};
 
 #[derive(Serialize, Deserialize)]
@@ -63,10 +64,21 @@ pub struct Therapy {
     pub approvals: Vec<Approval>,
 }
 
+pub struct ReferencedMarkup {
+    pub markup: Markup,
+    pub references: Vec<String>,
+}
+
 #[derive(Serialize, Deserialize)]
 pub struct Article {
     pub name: String,
     pub stub_issue: Option<String>,
+    pub is_category: Option<bool>,
+}
+
+pub struct ArticleMarkup {
+    pub article: Article,
+    pub markup: Option<ReferencedMarkup>,
 }
 
 #[derive(Serialize, Deserialize)]

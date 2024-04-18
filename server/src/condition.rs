@@ -23,37 +23,37 @@ use crate::article::{markup_article, read_article_markup};
 use crate::template::{render_page, NamedUrl, Navigation};
 
 #[rustfmt::skip::macros(html)]
-#[get("/evidence/{evidence_class}/index.html")]
-pub async fn evidence_class_page(path: web::Path<String>) -> Result<Markup> {
-    let evidence_class = path.into_inner();
-    let evidence_article = read_article_markup(&String::from("evidence"), &evidence_class);
+#[get("/conditions/{condition_name}/index.html")]
+pub async fn condition_page(path: web::Path<String>) -> Result<Markup> {
+    let condition_name = path.into_inner();
+    let condition_article = read_article_markup(&String::from("conditions"), &condition_name);
 
-    if let Ok(evidence_article) = evidence_article {
+    if let Ok(condition_article) = condition_article {
         Ok(render_page(
-            &evidence_article.article.name.clone(),
+            &condition_article.article.name.clone(),
             &Navigation {
-                page_title: titlecase(&evidence_article.article.name.clone()),
+                page_title: titlecase(&condition_article.article.name.clone()),
                 parents: vec![
                     NamedUrl {
                         name: String::from("Encyclopedia of Precision Medicine"),
                         url: String::from("/"),
                     },
                     NamedUrl {
-                        name: String::from("Evidence"),
-                        url: String::from("/evidence/index.html"),
+                        name: String::from("Conditions"),
+                        url: String::from("/conditions/index.html"),
                     },
                 ],
             },
             html! {
 		div .full-width {
-		    (markup_article(evidence_article))
+		    (markup_article(condition_article))
 		}
 	    },
         ))
     } else {
         Err(ErrorNotFound(format!(
-            "Could not find page for evidence level {}",
-            evidence_class
+            "Could not find page for condition {}",
+            condition_name
         )))
     }
 }

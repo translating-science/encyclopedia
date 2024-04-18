@@ -24,17 +24,17 @@ use std::error::Error;
 use std::fs::File;
 use std::io::Error as IoError;
 
-use crate::markdown::{direct_to_markup, file_to_markup, ReferencedMarkup};
-use crate::models::Therapy;
+use crate::markdown::{direct_to_markup, file_to_markup};
+use crate::models::{ReferencedMarkup, Therapy};
 use crate::reference::generate_reference_list;
 use crate::template::{render_page, NamedUrl, Navigation};
 
 #[rustfmt::skip::macros(html)]
-#[get("/therapies/{therapy_class}/{therapy_name}/index.html")]
-pub async fn therapy_page(path: web::Path<(String, String)>) -> Result<Markup> {
-    let (therapy_class, therapy_name) = path.into_inner();
-    let therapy_result = read_therapy(&therapy_class, &therapy_name);
-    let therapy_markdown = read_therapy_markdown(&therapy_class, &therapy_name);
+#[get("/therapies/{therapy_name}/index.html")]
+pub async fn therapy_page(path: web::Path<String>) -> Result<Markup> {
+    let therapy_name = path.into_inner();
+    let therapy_result = read_therapy(&therapy_name);
+    let therapy_markdown = read_therapy_markdown(&therapy_name);
 
     if let (Ok(therapy), Ok(mut therapy_markdown)) = (therapy_result, therapy_markdown) {
         Ok(render_page(
@@ -49,10 +49,6 @@ pub async fn therapy_page(path: web::Path<(String, String)>) -> Result<Markup> {
                     NamedUrl {
                         name: String::from("Therapies"),
                         url: String::from("/therapies/index.html"),
-                    },
-                    NamedUrl {
-                        name: titlecase(&therapy_class),
-                        url: format!("/therapies/{}/index.html", therapy_class),
                     },
                 ],
             },
@@ -70,24 +66,18 @@ pub async fn therapy_page(path: web::Path<(String, String)>) -> Result<Markup> {
     }
 }
 
-fn read_therapy(therapy_class: &String, therapy_name: &String) -> Result<Therapy, Box<dyn Error>> {
+fn read_therapy(therapy_name: &String) -> Result<Therapy, Box<dyn Error>> {
     let file = File::open(format!(
-        "../articles/therapies/{}/{}/therapy.json",
-        therapy_class, therapy_name
+        "../articles/therapies/{}/therapy.json",
+        therapy_name
     ))?;
 
     let therapy = from_reader(file)?;
     Ok(therapy)
 }
 
-fn read_therapy_markdown(
-    therapy_class: &String,
-    therapy_name: &String,
-) -> Result<ReferencedMarkup, IoError> {
-    let path = format!(
-        "../articles/therapies/{}/{}/therapy.md",
-        therapy_class, therapy_name
-    );
+fn read_therapy_markdown(therapy_name: &String) -> Result<ReferencedMarkup, IoError> {
+    let path = format!("../articles/therapies/{}/therapy.md", therapy_name);
 
     file_to_markup(&path)
 }

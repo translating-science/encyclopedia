@@ -1,0 +1,9 @@
+{
+    "name": "Prostate Cancer",
+    "full_name": "Malignant neoplasm of prostate",
+    "detailed": ["The prostate is a part of the male reproductive system, and is adjacent to the bladder. Cancer can occur in the prostate, and is typically slow growing, but can metastasize and spread throughout the body.",
+		 "More details about prostate cancer can be found at the <a href=\"https://www.cancer.gov/types/prostate\">prostate cancer section of Cancer.gov</a>."],
+    "location": "Prostate",
+    "icd-10": "C61",
+    "icd-o": "C61.9"
+}

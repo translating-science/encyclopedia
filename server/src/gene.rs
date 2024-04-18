@@ -96,7 +96,7 @@ mod test {
 
     #[test]
     fn test_read_gene_json() {
-        use crate::genes::gene::read_gene_json;
+        use crate::gene::read_gene_json;
 
         let gene_result = read_gene_json(&String::from("NF1"));
         assert!(gene_result.is_ok());
@@ -112,7 +112,7 @@ mod test {
 
     #[test]
     fn test_read_missing_gene_json() {
-        use crate::genes::gene::read_gene_json;
+        use crate::gene::read_gene_json;
 
         // there is no BRCA gene, there exist BRCA1 and BRCA2
         let gene_result = read_gene_json(&String::from("BRCA"));
@@ -121,7 +121,7 @@ mod test {
 
     #[test]
     fn test_gene_markup() {
-        use crate::genes::gene::markup_gene;
+        use crate::gene::markup_gene;
         use crate::models::Gene;
 
         let gene = Gene {

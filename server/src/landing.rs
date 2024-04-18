@@ -44,10 +44,28 @@ pub async fn landing_page() -> Result<Markup> {
 }
 
 fn get_sections() -> Vec<NamedUrl> {
-    vec![NamedUrl {
-        name: String::from("Genes"),
-        url: String::from("/genes/index.html"),
-    }]
+    vec![
+        NamedUrl {
+            name: String::from("Biomarkers"),
+            url: String::from("/biomarkers/index.html"),
+        },
+        NamedUrl {
+            name: String::from("Evidence Generation"),
+            url: String::from("/evidence/index.html"),
+        },
+        NamedUrl {
+            name: String::from("Genes"),
+            url: String::from("/genes/index.html"),
+        },
+        NamedUrl {
+            name: String::from("Therapies"),
+            url: String::from("/therapies/index.html"),
+        },
+        NamedUrl {
+            name: String::from("Conditions"),
+            url: String::from("/conditions/index.html"),
+        },
+    ]
 }
 
 #[rustfmt::skip::macros(html)]
@@ -86,7 +104,7 @@ mod tests {
     #[test]
     fn test_sections() {
         use crate::landing::get_sections;
-        assert_eq!(get_sections().len(), 1)
+        assert_eq!(get_sections().len(), 5)
     }
 
     #[test]

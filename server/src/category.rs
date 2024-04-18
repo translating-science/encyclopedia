@@ -14,20 +14,25 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-use actix_web::{get, Result};
+use actix_web::{get, web, Result};
 use maud::{html, Markup};
+use titlecase::titlecase;
 
 use std::fs::read_dir;
 
+use crate::article::read_article;
 use crate::template::{render_page, NamedUrl, Navigation};
 
 #[rustfmt::skip::macros(html)]
-#[get("/genes/index.html")]
-pub async fn genes() -> Result<Markup> {
+#[get("/{category_name}/index.html")]
+pub async fn category_page(path: web::Path<String>) -> Result<Markup> {
+    let category_name = path.into_inner();
+    let category_title = titlecase(&category_name);
+
     Ok(render_page(
-        &String::from("Genes"),
+        &category_title,
         &Navigation {
-            page_title: String::from("Genes"),
+            page_title: category_title.clone(),
             parents: vec![NamedUrl {
                 name: String::from("Encyclopedia of Precision Medicine"),
                 url: String::from("/"),
@@ -37,27 +42,29 @@ pub async fn genes() -> Result<Markup> {
 	    div .narrow-content {
 		section #overview {
 		    h1 {
-			"Genes"
+			(category_title)
 		    }
 		}
-		(list_genes())
+		(list_articles(category_name))
 	    }
 	},
     ))
 }
 
 #[rustfmt::skip::macros(html)]
-pub fn list_genes() -> Markup {
-    if let Ok(entries) = read_dir("../articles/genes/") {
+pub fn list_articles(category_name: String) -> Markup {
+    if let Ok(entries) = read_dir(format!("../articles/{}/", category_name)) {
         html! {
-	    section #genes {
+	    section #articles {
 		ul {
 		    @for entry in entries {
 			@if let Ok(entry) = entry {
-			    @if let Ok(gene) = entry.file_name().into_string() {
-				li {
-				    a href=(format!("/genes/{}/index.html", gene)) {
-					(gene)
+			    @if let Ok(article_name) = entry.file_name().into_string() {
+				@if let Ok(article) = read_article(&category_name, &article_name) {
+				    li {
+					a href=(format!("/{}/{}/index.html", category_name, article_name)) {
+					    (titlecase(&article.name))
+					}
 				    }
 				}
 			    }
@@ -67,6 +74,6 @@ pub fn list_genes() -> Markup {
 	    }
         }
     } else {
-        panic!("Could not find gene files.");
+        panic!("Could not find category.");
     }
 }

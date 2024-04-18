@@ -14,11 +14,17 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+pub mod article;
+
 pub mod biomarkers;
+
+pub mod category;
+
+pub mod condition;
 
 pub mod evidence;
 
-pub mod genes;
+pub mod gene;
 
 pub mod landing;
 
@@ -30,4 +36,4 @@ pub mod reference;
 
 pub mod template;
 
-pub mod therapies;
+pub mod therapy;

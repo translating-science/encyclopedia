@@ -19,16 +19,12 @@ use comrak::nodes::{Ast, AstNode, NodeValue};
 use comrak::{format_html, parse_document, Arena, Options};
 use maud::{Markup, PreEscaped};
 
+use crate::models::ReferencedMarkup;
 use crate::reference::{get_reference, to_descriptor};
 
 use std::cell::RefCell;
 use std::fs::File;
 use std::io::{Error, Read};
-
-pub struct ReferencedMarkup {
-    pub markup: Markup,
-    pub references: Vec<String>,
-}
 
 pub fn file_to_markup(path: &str) -> Result<ReferencedMarkup, Error> {
     let mut file = File::open(path)?;
