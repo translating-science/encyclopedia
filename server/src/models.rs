@@ -74,6 +74,7 @@ pub struct Article {
     pub name: String,
     pub stub_issue: Option<String>,
     pub is_category: Option<bool>,
+    pub alternative_names: Option<Vec<String>>,
 }
 
 pub struct ArticleMarkup {

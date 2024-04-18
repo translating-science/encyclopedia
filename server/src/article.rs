@@ -65,9 +65,16 @@ pub fn markup_article(article: ArticleMarkup) -> Markup {
 	    h1 {
 		(article.article.name)
 	    }
+	    @if let Some(alternative_names) = article.article.alternative_names {
+		p .subtitle {
+		    (format!("Also known as {}", alternative_names.join(", ")))
+		}
+	    }
 	    @if let Some(markup) = article.markup {
 		(markup.markup)
-		(generate_reference_list(&markup.references))
+		@if !markup.references.is_empty() {
+		    (generate_reference_list(&markup.references))
+		}
 	    }
 	    @else if let Some(stub_issue) = article.article.stub_issue {
 		p {

@@ -89,8 +89,6 @@ pub fn markdown_to_markup(markdown: &str) -> ReferencedMarkup {
     let mut citations = Vec::new();
     iter_nodes(root, &mut citations, &arena);
 
-    println!("citations: {:?}", citations);
-
     let mut html = vec![];
     format_html(root, &Options::default(), &mut html).unwrap();
 
