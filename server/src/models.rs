@@ -56,10 +56,32 @@ pub struct Evidence {
 pub struct Therapy {
     pub name: String,
     pub marketing_names: Vec<String>,
+    pub short_name: String,
     pub rxcui: String,
     pub detailed: Vec<String>,
     pub approvals_summary: Vec<String>,
     pub approvals: Vec<Approval>,
-    pub evidence_summary: Vec<String>,
-    pub evidence: Vec<Evidence>,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct Article {
+    pub name: String,
+    pub stub_issue: Option<String>,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct Reference {
+    pub pmid: Option<String>,
+    pub pmcid: Option<String>,
+    pub title: String,
+    pub authors: Vec<String>,
+    pub month: Option<i8>,
+    pub date: Option<i8>,
+    pub year: i16,
+    pub journal: Option<String>,
+    pub conference: Option<String>,
+    pub url: String,
+    pub doi: Option<String>,
+    pub license: Option<String>,
+    pub license_url: Option<String>,
 }

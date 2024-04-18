@@ -14,20 +14,5 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-pub mod biomarkers;
-
-pub mod evidence;
-
-pub mod genes;
-
-pub mod landing;
-
-pub mod markdown;
-
-pub mod models;
-
-pub mod reference;
-
-pub mod template;
-
-pub mod therapies;
+//pub mod therapies;
+pub mod therapy;

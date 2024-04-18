@@ -17,6 +17,8 @@
 use actix_files as fs;
 use actix_web::{web, App, HttpServer};
 
+use ts_encyclopedia::biomarkers::biomarker_page;
+use ts_encyclopedia::evidence::evidence_class_page;
 use ts_encyclopedia::genes::gene::gene_page;
 use ts_encyclopedia::genes::genes::genes;
 use ts_encyclopedia::landing::landing_page;
@@ -29,6 +31,8 @@ async fn main() -> std::io::Result<()> {
             .service(fs::Files::new("/resources", "./resources").show_files_listing())
             .service(web::redirect("/", "/index.html"))
             .service(landing_page)
+            .service(biomarker_page)
+            .service(evidence_class_page)
             .service(gene_page)
             .service(genes)
             .service(therapy_page)

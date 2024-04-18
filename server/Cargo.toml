@@ -9,6 +9,7 @@ edition = "2021"
 actix-files = "*"
 actix-web = "4"
 chrono = "*"
+comrak = "*"
 futures = "*"
 maud = { version = "*", features = ["actix-web"] }
 serde = { version = "*", features = ["derive"] }

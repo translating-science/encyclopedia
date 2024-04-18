@@ -3,9 +3,11 @@
     "marketing_names": [
 	"Keytruda"
     ],
+    "short_name": "Pembro",
     "rxcui": "1547545",
     "detailed": [
-	"Pembrolizumab is an immunotherapy medication developed by Merck Sharp & Dohme that is approved for the treatment of many advanced cancers. Pembrolizumab is known as an \"immune checkpoint inhibitor\": immune checkpoints are a normal part of the human immune system that prevent the immune system from attacking healthy cells. In some cancers, tumor cells start creating large amounts of immune checkpoint proteins, which stops the immune system from attacking the cancer cells. Pembrolizumab works by helping T cells from the human immune system to attack tumor cells that over-produce the PD-L1 and PD-L2 immune checkpoint proteins."
+	"Pembrolizumab is an immunotherapy medication developed by Merck Sharp & Dohme. Pembrolizumab has been granted approval for the treatment of many advanced cancers.",
+	"Pembrolizumab is known as an \"immune checkpoint inhibitor\". Immune checkpoints are a normal part of the human immune system that prevent the immune system from attacking healthy cells. In some cancers, tumor cells start creating large amounts of immune checkpoint proteins, which stops the immune system from attacking the cancer cells. Pembrolizumab works by helping T cells from the human immune system to attack tumor cells that over-produce the PD-L1 and PD-L2 immune checkpoint proteins."
     ],
     "approvals_summary": [
 	"Pembrolizumab has been approved by the FDA for the treatment of numerous cancers. While Pembrolizumab does not have an approval that is specific to prostate cancer, it has two biomarker-based approvals for the treatment of all metastatic/unresectable solid tumors."
@@ -21,8 +23,8 @@
 	},
 	{
 	    "reference": "https://www.fda.gov/drugs/resources-information-approved-drugs/fda-grants-accelerated-approval-pembrolizumab-first-tissuesite-agnostic-indication",
-	    "trial_name": "",
-	    "trial_nct_id": "",
+	    "trial_name": "KEYNOTE-016",
+	    "trial_nct_id": "NCT02054806",
 	    "condition": "Unresectable or metastatic solid tumors",
 	    "biomarker": "high microsatellite instability (MSI-H) or mismatch repair deficiency (dMMR)",
 	    "description": "In this collection of trials, patients with an unresectable/metastatic solid cancer and high microsatellite instability or mismatch repair deficiency had an overall response rate of 39.6%. 78% of patients who responded to Pembrolizumab had responses lasting more than half a year."
