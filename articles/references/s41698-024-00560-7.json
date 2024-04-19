@@ -1,0 +1,30 @@
+{
+    "title": "Development and validation of a deep learning-based microsatellite instability predictor from prostate cancer whole-slide images.",
+    "authors": [
+	"Qiyuan Hu",
+	"Abbas A. Rizvi",
+	"Geoffery Schau",
+	"Kshitij Ingale",
+	"Yoni Muller",
+	"Rachel Baits",
+	"Sebastian Pretzer",
+	"Aïcha BenTaieb",
+	"Abigail Gordhamer",
+	"Roberto Nussenzveig",
+	"Adam Cole",
+	"Matthew O. Leavitt",
+	"Ryan D. Jones",
+	"Rohan P. Joshi",
+	"Nike Beaubier",
+	"Martin C. Stumpe",
+	"Kunal Nagpal"
+    ],
+    "date": 9,
+    "month": 4,
+    "year": 2024,
+    "journal": "npj Precision Oncology",
+    "url": "https://www.nature.com/articles/s41698-024-00560-7",
+    "doi": "https://doi.org/10.1038/s41698-024-00560-7",
+    "license": "CC BY 4.0",
+    "license_url": "http://creativecommons.org/licenses/by/4.0/"
+}
